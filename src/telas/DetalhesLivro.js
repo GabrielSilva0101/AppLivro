@@ -1,8 +1,9 @@
-import { deleteDoc, doc } from 'firebase\firestone';
-import { Alert, Button, Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import  { doc, deleteDoc } from 'firebase/firestore';
+import {View, Text, StyleSheet, Image, Button, Alert} from 'react-native';
 import { db } from '../config/firebase';
 
-export default function DetalhesLivros({ route, navigate }) {
+export default function DetalhesLivros({ route, navigation }) {
 
   const { livro } = route.params;
 
@@ -18,7 +19,7 @@ export default function DetalhesLivros({ route, navigate }) {
 
 
   return (
-    <view style={Styles.container}>
+    <View style={styles.container}>
       {livro.capa ? (
         <Image source={{ uri: livro.capa }} style={styles.capa} />
       ) : (
@@ -28,7 +29,7 @@ export default function DetalhesLivros({ route, navigate }) {
       <Text style={styles.titulo}>{livro.titulo}</Text>
       <Text style={styles.autor}>{livro.autor}</Text>
 
-      <View style={style.botoes}>
+      <View style={styles.botoes}>
         <Button
           title="Minhas Anotações"
           onPress={() => navigation.navigate('Anota', { livro })}
@@ -41,12 +42,12 @@ export default function DetalhesLivros({ route, navigate }) {
           onPress={apgarLivro}
         />
       </View>
-    </view>
+    </View>
   );
 
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
