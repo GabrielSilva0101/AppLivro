@@ -8,6 +8,10 @@ export default function Home({ navigation }) {
         title="Acessar Minha Biblioteca"
         onPress={() => navigation.navigate('Biblioteca')}
       />
+      <Button 
+        title =" + livro"
+        onPress= {()=> navigation.navigate('AddLivro')}
+      />
     </View>
   );
 }
