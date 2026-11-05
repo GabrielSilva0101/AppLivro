@@ -9,7 +9,7 @@ export default function ListaAnotacoes({ navigation }) {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    // Busca os livros do Firebase em tempo real
+    
     const unsubscribe = onSnapshot(collection(db, 'livros'), (querySnapshot) => {
       const listaLivros = [];
       querySnapshot.forEach((doc) => {
@@ -23,7 +23,7 @@ export default function ListaAnotacoes({ navigation }) {
   }, []);
 
   const renderItem = ({ item }) => {
-    // Verifica se o livro já tem algum texto guardado no campo 'anotacao'
+    
     const temAnotacao = item.anotacao && item.anotacao.trim().length > 0;
 
     return (
