@@ -41,7 +41,7 @@ export default function Home({ navigation }) {
               <Ionicons name="book-outline" size={24} color="#4F6856" />
             </View>
             <View style={styles.caixaTexto}>
-              <Text styles={styles.tituloCartao}>Livros</Text>
+              <Text styles={styles.titulCartao}>Livros</Text>
               <Text style={styles.subtituloCartao}>Explore sua coleção</Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color="#657768" />
@@ -63,20 +63,21 @@ export default function Home({ navigation }) {
             <Ionicons name="chevron-forward" size={20} color="#A9ACA7" />
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={[styles.cartao, styles.cartaoInativo]}
+
+         
+          <TouchableOpacity 
+            style={[styles.cartao, styles.cartaoInativo]} 
             activeOpacity={0.7}
-            onPress={() => alert('Para ver anotações, abra um livro na sua Biblioteca primeiro.')}
+            onPress={() => navigation.navigate('ListaAnotacoes')} 
           >
             <View style={[styles.caixaIcone, { backgroundColor: '#E4E0EC' }]}>
               <Ionicons name="document-text-outline" size={24} color="#655E78" />
             </View>
-
             <View style={styles.caixaTexto}>
               <Text style={styles.tituloCartao}>Anotações</Text>
               <Text style={styles.subtituloCartao}>Guarde suas ideias</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#A9ACA7" />
+            <Ionicons name="chevron-forward" size={20} color="#657768" />
           </TouchableOpacity>
 
         </View>
@@ -93,31 +94,31 @@ export default function Home({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  safeArea:{
+  safeArea: {
     flex: 1,
     backgroundColor: '#F5F2EB'
   },
 
   container: {
     padding: 24,
-    paddingTop: 40 
+    paddingTop: 40
   },
 
-  cabecalho:{
+  cabecalho: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 40
   },
 
-  logoContainer:{
-    flexDirection:'row',
+  logoContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
   },
 
-  iconeLogo:{
-    width:40,
+  iconeLogo: {
+    width: 40,
     height: 40,
     backgroundColor: '#5F7564',
     borderRadius: 16,
@@ -125,46 +126,46 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     elevation: 2,
     shadowColor: '#000',
-    shadowOffset:{ width:0, height:1},
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 3
   },
 
-  tituloHeader:{
-    color:'#26352D',
+  tituloHeader: {
+    color: '#26352D',
     fontSize: 18,
     fontWeight: 'bold'
   },
 
-  botaoOpcoes:{
+  botaoOpcoes: {
     width: 40,
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.70)',
     borderRadius: 20,
     borderWidth: 0.67,
     borderColor: '#DDDCD4',
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center'
   },
 
-  secaoBoaVindas:{
+  secaoBoaVindas: {
     marginBottom: 48
   },
 
-  tagContainer:{
+  tagContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
-    marginBottom:20
+    marginBottom: 20
   },
 
-  linhaTag:{
-    width:32,
-    height:1,
+  linhaTag: {
+    width: 32,
+    height: 1,
     backgroundColor: '#A9B4A9'
   },
 
-  textoDestaque:{
+  textoDestaque: {
     color: '#29372F',
     fontSize: 36,
     fontWeight: 'bold',
@@ -172,47 +173,47 @@ const styles = StyleSheet.create({
     marginBottom: 16
   },
 
-  textoDestaqueItalico:{
+  textoDestaqueItalico: {
     color: '#687C6b',
     fontStyle: 'italic'
   },
 
-  subtituloDestaque:{
-    color:'#6F776F',
-    fontSize:16,
-    lineHeight:24
+  subtituloDestaque: {
+    color: '#6F776F',
+    fontSize: 16,
+    lineHeight: 24
   },
 
-  secaoBotoes:{
-    gap:16,
-    marginBottom:40
+  secaoBotoes: {
+    gap: 16,
+    marginBottom: 40
   },
 
-  cartao:{
-    flexDirection:'row',
+  cartao: {
+    flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
     borderRadius: 24,
     borderWidth: 0.67,
     gap: 16
   },
- 
-  cartaoAtivo:{
-    backgroundColor:' #FFFFFF',
+
+  cartaoAtivo: {
+    backgroundColor: ' #FFFFFF',
     borderColor: '#B9C4B8',
     elevation: 5,
     shadowColor: 'rgba(248,246,241,0.75)',
-    shadowOffset:{width: 0, height: 12},
+    shadowOffset: { width: 0, height: 12 },
     shadowOpacity: 1,
-    shadowRadius:32
+    shadowRadius: 32
   },
 
-  cartaoInativo:{
+  cartaoInativo: {
     backgroundColor: 'rgba(248,246,241, 0.75)',
-    borderColor:'#E5E2DA'
+    borderColor: '#E5E2DA'
   },
 
-  caixaIcone:{
+  caixaIcone: {
     width: 56,
     height: 56,
     borderRadius: 16,
@@ -220,30 +221,30 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  caixaTexto:{
-    flex:1
+  caixaTexto: {
+    flex: 1
   },
 
-  tituloCartao:{
+  tituloCartao: {
     color: '#35443B',
     fontSize: 16,
     fontWeight: 'bold'
   },
 
-  subtituloCartao:{
+  subtituloCartao: {
     color: '#858B84',
     fontSize: 14,
     marginTop: 4,
   },
 
-  rodape:{
-    paddingVertical:20,
+  rodape: {
+    paddingVertical: 20,
     borderTopWidth: 0.67,
     borderColor: '#E7E4DC',
     alignItems: 'center'
   },
 
-  textoRodape:{
+  textoRodape: {
     color: '#8A8F88',
     fontSize: 12
   }
