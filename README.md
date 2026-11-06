@@ -1,56 +1,29 @@
-# Welcome to your Expo app 👋
+#📚 Minha Biblioteca
+Um aplicativo multiplataforma (Mobile e Web) inspirado no Kindle e no Skoob, criado para gerir a sua coleção pessoal de livros, guardar reflexões de leitura e acompanhar a sua jornada literária num ambiente tranquilo e moderno.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+#✨ Funcionalidades
+Gestão de Acervo: Adicione livros à sua coleção com título, autor e capa.
 
-## Get started
+Anotações Literárias: Escreva e guarde notas, citações ou reflexões para cada livro de forma independente.
 
-1. Install dependencies
+Perfil Personalizado: Altere a sua foto de perfil, biografia e acompanhe as suas métricas (total de livros e anotações).
 
-   ```bash
-   npm install
-   ```
+Design Moderno: Interface limpa em tons pastel com navegação baseada numa barra flutuante translúcida (efeito Glassmorphism).
 
-2. Start the app
+Multiplataforma: Experiência fluida e idêntica em iOS, Android e Web.
 
-   ```bash
-   npx expo start
-   ```
+#🛠️ Tecnologias Utilizadas
+Frontend: React Native & Expo
 
-In the output, you'll find options to open the app in a
+Navegação: React Navigation (Combinação de Bottom Tabs e Stack)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Base de Dados: Firebase Firestore (NoSQL em tempo real)
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Ícones vetoriais: Lucide React Native (suporte total a SVG na Web e Mobile)
 
-## Get a fresh project
+Hospedagem Web: Vercel (configurado como SPA)
 
-When you're ready, run:
+#🎨 Design & Processo Criativo
+Figma: Utilizado como a ferramenta principal de UX/UI Design para estruturar a paleta de cores (tons pastel, cartões arredondados) e arquitetar a experiência do utilizador antes da codificação.
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Inteligência Artificial: Atuou como ferramenta de apoio durante o desenvolvimento para otimizar a organização do código, estruturar os ficheiros CSS e resolver problemas de compatibilidade entre as versões Mobile e Web.
