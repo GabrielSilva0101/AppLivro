@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { collection, onSnapshot, doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { Library, User, Camera, Pencil, Book, FileText, Pen } from 'lucide-react-native';
 
 export default function Perfil({ navigation }) {
   const [totalLivros, setTotalLivros] = useState(0);
@@ -113,13 +114,11 @@ export default function Perfil({ navigation }) {
         <View style={styles.cabecalho}>
           <TouchableOpacity style={styles.logoContainer} onPress={() => navigation.navigate('Biblioteca')}>
             <View style={styles.iconeLogo}>
-              <Ionicons name="library" size={20} color="#FFF" />
+              <Library size={20} color="#FFF" />
             </View>
             <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.botaoOpcoes} onPress={() => navigation.navigate('Home')}>
-            <Ionicons name="home-outline" size={20} color="#4F6856" />
-          </TouchableOpacity>
+          
         </View>
 
         <View style={styles.cartaoPerfil}>
@@ -128,11 +127,11 @@ export default function Perfil({ navigation }) {
               <Image source={{ uri: foto }} style={styles.fotoPerfil} />
             ) : (
               <View style={[styles.fotoPerfil, styles.fotoPlaceholder]}>
-                <Ionicons name="person" size={40} color="#A9B4A9" />
+                <User size={40} color="#A9B4A9" />
               </View>
             )}
             <View style={styles.iconeEdicaoFoto}>
-              <Ionicons name="camera" size={16} color="#FFF" />
+              <Camera size={16} color="#FFF" />
             </View>
           </TouchableOpacity>
 
@@ -160,7 +159,7 @@ export default function Perfil({ navigation }) {
               <Text style={styles.nomeUsuario}>{nome}</Text>
               <Text style={styles.bioUsuario}>{bio}</Text>
               <TouchableOpacity style={styles.botaoEditar} onPress={iniciarEdicao}>
-                <Ionicons name="pencil-outline" size={16} color="#5F7564" />
+                <Pencil size={16} color="#5F7564" />
                 <Text style={styles.textoBotaoEditar}>Editar Perfil</Text>
               </TouchableOpacity>
             </View>
@@ -177,7 +176,7 @@ export default function Perfil({ navigation }) {
             onPress={() => navigation.navigate('Biblioteca')}
           >
             <View style={[styles.caixaIconeMetrica, { backgroundColor: '#DFE9DE' }]}>
-              <Ionicons name="book" size={24} color="#4F6856" />
+              <Book size={24} color="#4F6856" />
             </View>
             <Text style={styles.numeroMetrica}>{totalLivros}</Text>
             <Text style={styles.textoMetrica}>Coleção</Text>
@@ -190,7 +189,7 @@ export default function Perfil({ navigation }) {
             onPress={() => navigation.navigate('ListaAnotacoes')}
           >
             <View style={[styles.caixaIconeMetrica, { backgroundColor: '#E4E0EC' }]}>
-              <Ionicons name="document-text" size={24} color="#655E78" />
+              <FileText size={24} color="#655E78" />
             </View>
             <Text style={styles.numeroMetrica}>{totalAnotacoes}</Text>
             <Text style={styles.textoMetrica}>Anotações</Text>
@@ -210,7 +209,8 @@ const styles = StyleSheet.create({
 
   container: {
     padding: 24,
-    paddingTop: 40
+    paddingTop: 40,
+    paddingBottom: 120
   },
 
   cabecalho: {

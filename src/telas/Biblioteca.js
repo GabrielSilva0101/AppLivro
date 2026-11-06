@@ -3,6 +3,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { db } from '../config/firebase';
+import { Library, Search, Plus, Book, ChevronRight } from 'lucide-react-native';
 
 export default function Biblioteca({ navigation }) {
   const [livros, setLivros] = useState([]);
@@ -33,7 +34,7 @@ export default function Biblioteca({ navigation }) {
           <Image source={{ uri: item.capa }} style={styles.imagemCapa} />
         ) : (
           <View style={[styles.imagemCapa, styles.placeholderCapa]}>
-            <Ionicons name="book" size={40} color="#A9B4A9" />
+            <Library size={20} color="#A9B4A9" />
           </View>
         )}
         
@@ -57,22 +58,22 @@ export default function Biblioteca({ navigation }) {
       <View style={styles.cabecalhoTopo}>
         <View style={styles.logoContainer}>
           <View style={styles.iconeLogo}>
-            <Ionicons name="library" size={20} color="#FFF" />
+            <Library size={20} color="#ffff" />
           </View>
           <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
         </View>
-        <TouchableOpacity style={styles.botaoOpcoes}
+       {/* <TouchableOpacity style={styles.botaoOpcoes}
           onPress={()=> navigation.navigate('Perfil')}
         >
           <Ionicons name="settings-outline" size={20} color="#4F6856" />
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
       </View>
 
       
-      <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
+     {/* <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={16} color="#7A827B" />
         <Text style={styles.textoVoltar}>Voltar para o início</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>*/}
 
       
       <View style={styles.secaoDestaque}>
@@ -93,7 +94,7 @@ export default function Biblioteca({ navigation }) {
           style={styles.botaoAdicionar}
           onPress={() => navigation.navigate('AddLivro')}
         >
-          <Ionicons name="add" size={16} color="#FFF" />
+          <Plus size={22} color="#FFF" />
           <Text style={styles.textoBotaoAdicionar}>Adicionar livro</Text>
         </TouchableOpacity>
       </View>
@@ -140,6 +141,7 @@ const styles = StyleSheet.create({
   listaContainer: {
     padding: 24,
     paddingTop: 40,
+    paddingBottom:120
   },
   headerContainer: {
     marginBottom: 36,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { Library, MoreHorizontal, BookOpen, User, FileText, ChevronRight } from 'lucide-react-native';
 
 export default function Home({ navigation }) {
   return (
@@ -15,7 +16,7 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate('Biblioteca')}
           >
             <View style={styles.iconeLogo}>
-              <Ionicons name="library" size={20} color="#FFF" />
+              <Library size={20} color = "#FFF"/>
             </View>
             <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
           </TouchableOpacity>
@@ -48,13 +49,13 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate('Biblioteca')}
           >
             <View style={[styles.caixaIcone, { backgroundColor: '#DFE9DE' }]}>
-              <Ionicons name="book-outline" size={24} color="#4F6856" />
+              <BookOpen size={20} color="#647268"/>
             </View>
             <View style={styles.caixaTexto}>
               <Text style={styles.tituloCartao}>Livros</Text>
               <Text style={styles.subtituloCartao}>Explore sua coleção</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#657768" />
+            <ChevronRight size={20} color="#657768"/>
           </TouchableOpacity>
 
           
@@ -64,13 +65,13 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate('Perfil')}
           >
             <View style={[styles.caixaIcone, { backgroundColor: '#EADFDA' }]}>
-              <Ionicons name="person-outline" size={24} color="#7B5E56" />
+              <User size={24} color="#7b5e56"/>
             </View>
             <View style={styles.caixaTexto}>
               <Text style={styles.tituloCartao}>Perfil</Text>
               <Text style={styles.subtituloCartao}>Sua jornada de leitura</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#A9ACA7" />
+            <ChevronRight size={20} color="#657768" />
           </TouchableOpacity>
 
 
@@ -80,13 +81,13 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate('ListaAnotacoes')}
           >
             <View style={[styles.caixaIcone, { backgroundColor: '#E4E0EC' }]}>
-              <Ionicons name="document-text-outline" size={24} color="#655E78" />
+              <FileText size={24} color="#655E78" />
             </View>
             <View style={styles.caixaTexto}>
               <Text style={styles.tituloCartao}>Anotações</Text>
               <Text style={styles.subtituloCartao}>Guarde suas ideias</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#657768" />
+            <ChevronRight size={20} color="#657768" />
           </TouchableOpacity>
 
         </View>

@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, Alert, SafeAreaView, P
 import { Ionicons } from '@expo/vector-icons';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { X, Book, FileText, Trash2, ChevronRight } from 'lucide-react-native';
 
 export default function DetalhesLivro({ route, navigation }) {
   const { livro } = route.params;
@@ -45,7 +46,7 @@ export default function DetalhesLivro({ route, navigation }) {
         
         <View style={styles.cabecalho}>
           <TouchableOpacity style={styles.botaoFechar} onPress={() => navigation.goBack()}>
-            <Ionicons name="close" size={24} color="#7A827B" />
+            <X size={24} color="#7A827B" />
           </TouchableOpacity>
         </View>
 
@@ -56,7 +57,7 @@ export default function DetalhesLivro({ route, navigation }) {
               <Image source={{ uri: livro.capa }} style={styles.capa} />
             ) : (
               <View style={[styles.capa, styles.placeholderCapa]}>
-                <Ionicons name="book" size={60} color="#A9B4A9" />
+                <Book size={60} color="#A9B4A9" />
               </View>
             )}
           </View>
@@ -75,13 +76,13 @@ export default function DetalhesLivro({ route, navigation }) {
             onPress={() => navigation.navigate('Anota', { livro })}
           >
             <View style={styles.caixaIconeAnotacao}>
-              <Ionicons name="document-text" size={24} color="#FFF" />
+              <FileText size={24} color="#FFF" />
             </View>
             <View style={styles.caixaTextoAcao}>
               <Text style={styles.tituloAcaoAnotacao}>Anotações</Text>
               <Text style={styles.subtituloAcao}>Ler ou escrever ideias</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#5F7564" />
+            <ChevronRight size={20} color="#5F7564" />
           </TouchableOpacity>
 
           
@@ -91,7 +92,7 @@ export default function DetalhesLivro({ route, navigation }) {
             onPress={confirmarExclusao}
           >
             <View style={styles.caixaIconeRemover}>
-              <Ionicons name="trash-outline" size={24} color="#D96C6C" />
+              <Trash2 size={24} color="#D96C6C" />
             </View>
             <View style={styles.caixaTextoAcao}>
               <Text style={styles.tituloAcaoRemover}>Remover livro</Text>
@@ -114,6 +115,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
+    paddingBottom:120
   },
 
   cabecalho: {

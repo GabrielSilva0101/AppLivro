@@ -4,11 +4,15 @@
     "slug": "AppLivro",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/book.png",
     "scheme": "applivro",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "com.seuusuario.applivro",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -20,8 +24,10 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "output": "server",
-      "favicon": "./assets/images/favicon.png"
+      "name": "Minha Biblioteca Pessoal",
+      "shortName": "Biblioteca",
+      "output": "single",
+      "favicon": "./assets/images/book.png"
     },
     "plugins": [
       "expo-router",
@@ -37,6 +43,16 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": false
+        }
+      },
+      "eas": {
+        "projectId": "84159faf-b426-4a9a-a147-cd97b4b38ad8"
+      }
     }
   }
 }

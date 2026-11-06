@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet, Alert, Vibration, TouchableOpacity, 
 import { Ionicons } from '@expo/vector-icons';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { Library, ArrowLeft, BookOpen, User, Image as ImageIcon, PlusCircle } from 'lucide-react-native';
 
 export default function AddLivro({ navigation }) {
   const [titulo, setTitulo] = useState('');
@@ -22,7 +23,7 @@ export default function AddLivro({ navigation }) {
         capa: capa
       });
       
-      Vibration.vibrate(500); // Mantém o atuador exigido no projeto
+      Vibration.vibrate(500); 
       Alert.alert('Sucesso', 'Livro guardado na sua biblioteca!');
       navigation.goBack();
     } catch (error) {
@@ -34,11 +35,11 @@ export default function AddLivro({ navigation }) {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         
-        {/* Cabeçalho */}
+        
         <View style={styles.cabecalho}>
           <View style={styles.logoContainer}>
             <View style={styles.iconeLogo}>
-              <Ionicons name="library" size={20} color="#FFF" />
+              <Library size={20} color="#FFF" />
             </View>
             <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
           </View>
@@ -46,7 +47,7 @@ export default function AddLivro({ navigation }) {
 
         
         <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={16} color="#7A827B" />
+          <ArrowLeft size={16} color="#7A827B" />
           <Text style={styles.textoVoltar}>Voltar</Text>
         </TouchableOpacity>
 
@@ -64,7 +65,7 @@ export default function AddLivro({ navigation }) {
           </Text>
         </View>
 
-        {/* Formulário */}
+       
         <View style={styles.cartaoFormulario}>
           <Text style={styles.label}>Título do Livro</Text>
           <TextInput 
@@ -95,7 +96,7 @@ export default function AddLivro({ navigation }) {
           />
 
           <TouchableOpacity style={styles.botaoSalvar} onPress={salvarLivro} activeOpacity={0.8}>
-            <Ionicons name="checkmark-circle-outline" size={20} color="#FFF" />
+            <PlusCircle size={20} color="#FFF" />
             <Text style={styles.textoBotaoSalvar}>Guardar Livro</Text>
           </TouchableOpacity>
         </View>

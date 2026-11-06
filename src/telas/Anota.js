@@ -3,6 +3,7 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, SafeAreaView, Keyb
 import { Ionicons } from '@expo/vector-icons';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
+import { Library, ArrowLeft, Save, Trash2 } from 'lucide-react-native';
 
 export default function Anota({ route, navigation }) {
   const { livro } = route.params;
@@ -79,14 +80,14 @@ export default function Anota({ route, navigation }) {
       <View style={styles.cabecalho}>
         <TouchableOpacity style={styles.logoContainer} onPress={() => navigation.navigate('Biblioteca')}>
           <View style={styles.iconeLogo}>
-            <Ionicons name="library" size={20} color="#FFF" />
+            <Library size={20} color="#fff"/>
           </View>
           <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={16} color="#7A827B" />
+        <ArrowLeft size={16} color="#5f7564"/>
         <Text style={styles.textoVoltar}>Voltar</Text>
       </TouchableOpacity>
 
@@ -111,13 +112,13 @@ export default function Anota({ route, navigation }) {
         />
 
         <TouchableOpacity style={styles.botaoSalvar} onPress={salvarAnotacao} activeOpacity={0.8}>
-          <Ionicons name="save-outline" size={20} color="#FFF" />
+          <Save size={20} color="#fff"/>
           <Text style={styles.textoBotaoSalvar}>Guardar Anotação</Text>
         </TouchableOpacity>
 
         {temAnotacaoGuardada && (
           <TouchableOpacity style={styles.botaoRemover} onPress={confirmarExclusao} activeOpacity={0.8}>
-            <Ionicons name="trash-outline" size={20} color="#D96C6C" />
+            <Trash2 size={20} color="#D96C6C" />
             <Text style={styles.textoBotaoRemover}>Apagar Anotação</Text>
           </TouchableOpacity>
         )}
@@ -152,6 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     paddingTop: 40,
+    paddingBottom:120
   },
   cabecalho: {
     flexDirection: 'row',

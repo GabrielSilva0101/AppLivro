@@ -3,13 +3,14 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { db } from '../config/firebase';
+import { Library, EllipsisHorizontal, BookOpen, User, FileText, ChevronRight, PlusCircle } from 'lucide-react-native';
 
 export default function ListaAnotacoes({ navigation }) {
   const [livros, setLivros] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    
+
     const unsubscribe = onSnapshot(collection(db, 'livros'), (querySnapshot) => {
       const listaLivros = [];
       querySnapshot.forEach((doc) => {
@@ -23,12 +24,12 @@ export default function ListaAnotacoes({ navigation }) {
   }, []);
 
   const renderItem = ({ item }) => {
-    
+
     const temAnotacao = item.anotacao && item.anotacao.trim().length > 0;
 
     return (
-      <TouchableOpacity 
-        style={styles.cartaoLivro} 
+      <TouchableOpacity
+        style={styles.cartaoLivro}
         activeOpacity={0.7}
         onPress={() => navigation.navigate('Anota', { livro: item })}
       >
@@ -37,7 +38,7 @@ export default function ListaAnotacoes({ navigation }) {
             <Image source={{ uri: item.capa }} style={styles.imagemCapa} />
           ) : (
             <View style={[styles.imagemCapa, styles.placeholderCapa]}>
-              <Ionicons name="book" size={24} color="#A9B4A9" />
+              <Library size={24} color="#A9B4A9" />
             </View>
           )}
         </View>
@@ -45,20 +46,22 @@ export default function ListaAnotacoes({ navigation }) {
         <View style={styles.infoLivro}>
           <Text style={styles.tituloLivro} numberOfLines={1}>{item.titulo}</Text>
           <Text style={styles.autorLivro} numberOfLines={1}>{item.autor}</Text>
-          
+
           <View style={styles.tagAnotacao}>
-            <Ionicons 
-              name={temAnotacao ? "document-text" : "add-circle-outline"} 
-              size={14} 
-              color={temAnotacao ? "#5F7564" : "#8A8F88"} 
-            />
+            <View style={styles.tagAnotacao}>
+              {temAnotacao ? (
+                <FileText size={14} color="#5F7564" />
+              ) : (
+                <PlusCircle size={14} color="#8A8F88" />
+              )}
+            </View>
             <Text style={[styles.textoAnotacao, temAnotacao && styles.textoAnotacaoAtiva]}>
               {temAnotacao ? '1 Anotação guardada' : 'Adicionar anotação'}
             </Text>
           </View>
         </View>
 
-        <Ionicons name="chevron-forward" size={20} color="#CFD6CD" />
+        <ChevronRight size={18} color="#CFD6CD" />
       </TouchableOpacity>
     );
   };
@@ -77,19 +80,19 @@ export default function ListaAnotacoes({ navigation }) {
       <View style={styles.cabecalho}>
         <TouchableOpacity style={styles.logoContainer} onPress={() => navigation.navigate('Biblioteca')}>
           <View style={styles.iconeLogo}>
-            <Ionicons name="library" size={20} color="#FFF" />
+            <Library size={20} color="#FFF" />
           </View>
           <Text style={styles.tituloHeader}>Minha Biblioteca</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.botaoOpcoes} onPress={() => navigation.navigate('Home')}>
+        {/*<TouchableOpacity style={styles.botaoOpcoes} onPress={() => navigation.navigate('Home')}>
           <Ionicons name="home-outline" size={20} color="#4F6856" />
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
       </View>
 
-      <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
+      {/* <TouchableOpacity style={styles.botaoVoltar} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={16} color="#7A827B" />
         <Text style={styles.textoVoltar}>Voltar</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>*/}
 
       <View style={styles.secaoDestaque}>
         <View style={styles.tagContainer}>
@@ -104,7 +107,7 @@ export default function ListaAnotacoes({ navigation }) {
         </Text>
       </View>
 
-      {/* Lista de Livros (Vertical) */}
+
       <FlatList
         data={livros}
         keyExtractor={item => item.id}
@@ -121,7 +124,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5F2EB',
     padding: 24,
-    paddingTop: 40,
+    paddingTop: 80,
+    paddingBottom: 120
   },
   cabecalho: {
     flexDirection: 'row',
