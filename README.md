@@ -25,3 +25,20 @@ Base de Dados: Firebase Firestore (NoSQL em tempo real)
 Figma: Utilizado como a ferramenta principal de UX/UI Design para estruturar a paleta de cores (tons pastel, cartões arredondados) e arquitetar a experiência do utilizador antes da codificação.
 
 Inteligência Artificial: Atuou como ferramenta de apoio durante o desenvolvimento para otimizar a organização do código, estruturar os ficheiros CSS e resolver problemas de compatibilidade entre as versões Mobile e Web.
+
+
+🚀 Como Executar o Projeto Localmente
+
+1. Clone o repositório e instale as dependências:
+
+Bash
+npm install
+
+2. Configure o Firebase:
+Certifique-se de que o ficheiro src/config/firebase.js contém as credenciais do seu projeto Firebase Firestore.
+
+3. Inicie o servidor de desenvolvimento:
+
+Bash
+npx expo start
+(Utilize a aplicação Expo Go no seu telemóvel para ler o QR Code ou digite w no terminal para abrir no navegador).
