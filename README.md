@@ -31,14 +31,14 @@ Inteligência Artificial: Atuou como ferramenta de apoio durante o desenvolvimen
 
 1. Clone o repositório e instale as dependências:
 
-Bash
-npm install
+<img width="281" height="80" alt="image" src="https://github.com/user-attachments/assets/8053686f-3410-47dc-9600-73a5f2dbb810" />
+
 
 2. Configure o Firebase:
 Certifique-se de que o ficheiro src/config/firebase.js contém as credenciais do seu projeto Firebase Firestore.
 
 3. Inicie o servidor de desenvolvimento:
 
-Bash
-npx expo start
+<img width="208" height="79" alt="image" src="https://github.com/user-attachments/assets/6acf215c-4e46-421c-b1f0-5fab734300a8" />
+
 (Utilize a aplicação Expo Go no seu telemóvel para ler o QR Code ou digite w no terminal para abrir no navegador).
