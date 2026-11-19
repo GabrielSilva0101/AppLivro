@@ -9,7 +9,7 @@
 > **Disciplina:** CCP150 — Desenvolvimento de Aplicativos Móveis  
 > **Instituição:** Centro Universitário FEI  
 > **Professor:** Vinicius Peruzzi  
-> **Autor:** Gabriel Vieira Leite da Silva — RA: `[INSIRA SEU RA AQUI]`
+> **Autor:** Gabriel Vieira Leite da Silva — RA: `22.125.036-8`
 
 ---
 
@@ -70,25 +70,12 @@ Leitores frequentemente perdem o controle dos livros que possuem ou deixam cita�
 
 ## 🎥 4. Demonstração
 
-> 🔗 **Versão Web (Vercel):** `[INSIRA AQUI O LINK DO DEPLOY NA VERCEL]`
+
 
 ### Fluxo em Funcionamento (GIF / Vídeo)
-<!-- Substitua o caminho abaixo pelo GIF ou vídeo gravado do app funcionando -->
-
 
 https://github.com/user-attachments/assets/d11762f6-bc56-4b8c-96ec-53f43a2957c6
 
-
-
-### Capturas de Tela
-
-| Home | Biblioteca | Adicionar Livro |
-| :---: | :---: | :---: |
-| ![Home](./assets/tela-home.png) | ![Biblioteca](./assets/tela-biblioteca.png) | ![AddLivro](./assets/tela-addlivro.png) |
-
-| Detalhes do Livro | Anotações | Perfil |
-| :---: | :---: | :---: |
-| ![Detalhes](./assets/tela-detalhes.png) | ![Anotacoes](./assets/tela-anotacoes.png) | ![Perfil](./assets/tela-perfil.png) |
 
 ---
 
